@@ -23,8 +23,8 @@
     "node": ">= v18.15.0"
   },
   "scripts": {
-    "prepare": "./node_modules/pegjs/bin/pegjs ./lib/parser.pegjs",
-    "test": "./node_modules/mocha/bin/mocha"
+    "prepare": "npx pegjs ./lib/parser.pegjs",
+    "test": "npx mocha"
   },
   "license": "MIT"
 }
