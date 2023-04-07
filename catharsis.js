@@ -144,7 +144,13 @@ class Catharsis {
             .replace(/\s+/g, ' ')
             .trim();
 
-        return cachedParse(typeExpr, options);
+        try {
+            return cachedParse(typeExpr, options);
+        } catch (e) {
+            // Unsupported type expression, so we display warning message and replace with "Any"
+            console.warn(e);
+            return cachedParse('*', options);
+        }
     }
 
     stringify(parsedType, options) {
